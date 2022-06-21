@@ -6,11 +6,11 @@ document.querySelector("#comments-list").innerHTML=""
 
 fetch("https://api.opensea.io/api/v1/assets?format=json")
 .then(resp => resp.json())
-.then(data => renderimage(data.assets))
+.then(data => renderImage(data.assets))
 // .then(data => renderpic(data))
 
 
-function renderimage (data) {
+function renderImage (data) {
     data.forEach(element => {
         if(element.image_url == null ) {
 
@@ -41,7 +41,7 @@ function renderimage (data) {
             
         
         let test=[img,name,likes]
-        console.log(test[2])
+        // console.log(test[2])
         
         div.append(img,name,btnup,btndown)
         list.append(div)
@@ -60,10 +60,24 @@ function renderimage (data) {
             console.log(newlikes)
         })
 
+    // When a user submits the form, the NFT appears on the DOM. No persistence necessary.
+    const form = document.querySelector('#new-nft-form').addEventListener('submit', submitNft)
 
+        function submitNft(event) {
+        event.preventDefault()
 
+        const name = document.querySelector('#nft-name').value
+        console.log(name)
+        
+        const image = document.querySelector('#nft-image').value
+        console.log(image)
 
-
+        let newNft = {
+            'name': name,
+            'image': image,
+            }
+        renderImage(newNft)
+        }
     }
     });
 }
