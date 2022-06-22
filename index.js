@@ -14,7 +14,7 @@ function renderImage (data) {
 
 function notforrender (element) {
 
-    if(element.image_url == null ) {
+    if(element.image_url == null ) { 
 
     }
     
@@ -61,10 +61,23 @@ function notforrender (element) {
         let newlikes=oldlikes -1
         likes.innerText = newlikes
         console.log(newlikes)
+
+        
         
     })
 
- 
+    img.addEventListener("mouseover", function( event ) {
+    // highlight the mouseover target 
+    event.target.style.width = `150%`
+    event.target.style.height= `150%`
+
+    // reset the color after a short delay
+    setTimeout(function() {
+        event.target.style.width = `100%`;
+        event.target.style.height= `100%`
+    }, 500);
+    }, false);
+
     };
 
     
@@ -93,3 +106,4 @@ function notforrender (element) {
 
 
 
+                                                   
