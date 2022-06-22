@@ -36,6 +36,14 @@
     height: 300px;
     /* border: 1px solid black; */
   }
+
+ /*
+  use this when you figure JS equivalent to this
+  .image:hover {
+    transform: scale(1.5);
+  }
+*/
+
   
   .title {
     text-align: right;

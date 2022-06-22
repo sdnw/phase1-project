@@ -23,14 +23,18 @@ function notforrender (element) {
     let div=document.createElement("div")        
     let img=document.createElement("img")
     let name=document.createElement("h2")
-    let likes=document.createElement("p")        
+    let likes=document.createElement("p")
+     
+    const detailImage = document.querySelector('.detail-image')       
     
         img.src=element.image_url
         name.innerText=element.name.slice(0,12)
         likes.innerText=element.token_id*.0000000000000000000000000000000000000000000000000000000000000000000000001
         name.className= "title"
         img.className = "image"
-        div.className = "image-card"                
+        div.className = "image-card"
+
+        detailImage.src = "element.image_url"                
     
     let btnup=document.createElement("button")
     let btndown= document.createElement("button")
@@ -45,6 +49,11 @@ function notforrender (element) {
     
     let test=[img,name,likes]
     // console.log(test[2])
+
+    img.addEventListener('mouseover', (e) => {
+
+        console.log('mouseovered')
+    })
     
     div.append(img,name,btnup,btndown)
     list.append(div)
@@ -66,7 +75,6 @@ function notforrender (element) {
         
     })
 
-    img.addEventListener("mouseover", function( event ) {
     // highlight the mouseover target 
     event.target.style.width = `150%`
     event.target.style.height= `150%`
@@ -79,15 +87,6 @@ function notforrender (element) {
     }, false);
 
     };
-
-    
-        }
-        const form = document.querySelector('#new-nft-form').addEventListener('submit', submitNft)
-
-        function submitNft(event) {
-                event.preventDefault()
-        
-                const name = document.querySelector('#nft-name').value
                 console.log(name)
                 
                 const image = document.querySelector('#nft-image').value
