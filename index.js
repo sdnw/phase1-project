@@ -69,22 +69,21 @@ function notforrender (element) {
         let oldlikes =parseInt(likes.innerText)
         let newlikes=oldlikes -1
         likes.innerText = newlikes
-        console.log(newlikes)
-
-        
+        console.log(newlikes)        
         
     })
 
-    // highlight the mouseover target 
-    event.target.style.width = `150%`
-    event.target.style.height= `150%`
+    // // highlight the mouseover target 
 
-    // reset the color after a short delay
-    setTimeout(function() {
-        event.target.style.width = `100%`;
-        event.target.style.height= `100%`
-    }, 500);
-    }, false);
+    // event.target.style.width = `150%`
+    // event.target.style.height= `150%`
+
+    // // reset the color after a short delay
+    // setTimeout(function() {
+    //     event.target.style.width = `100%`;
+    //     event.target.style.height= `100%`
+    // }, 500);
+    // }, false);
 
     };
                 console.log(name)
