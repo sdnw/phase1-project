@@ -30,8 +30,8 @@ function notforrender (element) {
     // 1st deliverable 
     let btnup = document.createElement("button")
     let btndown = document.createElement("button")
-        btnup.innerText = "Upvote"
-        btndown.innerText = "Downvote"
+        btnup.innerText = "👍"
+        btndown.innerText = "👎"
         btnup.className = "float-child"
         btndown.className = "float-child"
         
